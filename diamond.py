@@ -16,6 +16,9 @@ class TurtleController(Node):
         msg.angular.z = angular_z
         return msg
 
+    ### The approach I had for the diamond was to replicate the square publisher, but instead of starting with linear velocity, I wanted to start with angular velocity. 
+    ### This way, the turtle will start by rotating, thereby making the diamond.
+
     def get_twist_msg(self):
         if self.time < 2:
             	msg = self.create_twist(0.0, 1.0)
