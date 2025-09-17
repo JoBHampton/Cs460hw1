@@ -16,6 +16,10 @@ class TurtleController(Node):
         msg.angular.z = angular_z
         return msg
 
+    ### This one actually was an accident. 
+    ### When making the diamond, I made the time intervals of the rotating too long so the turtle rotated too far and made a criss-cross.
+    ### I then decided to make this into a star by adding a couple more timer additions and lengthening the linear velocity so that the star would be bigger.
+
     def get_twist_msg(self):
         if self.time < 5:
             	msg = self.create_twist(0.0, 1.0)
