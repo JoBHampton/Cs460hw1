@@ -16,23 +16,25 @@ class TurtleController(Node):
         msg.angular.z = angular_z
         return msg
 
+    ### This approach was very similar to the diamond and square publisher, except I elongated two of the sides in order to create a rectangle.
+
     def get_twist_msg(self):
         if self.time < 5:
-            msg = self.create_twist(2.0, 0.0)
+            msg = self.create_twist(2.0, 0.0) # long Side
         elif self.time >= 5 and self.time < 7:
-            msg = self.create_twist(0.0, 1.6)
+            msg = self.create_twist(0.0, 1.6) # Rotate 90 degrees
         elif self.time >= 10 and self.time < 15:
-            msg = self.create_twist(1.0, 0.0)
+            msg = self.create_twist(1.0, 0.0) # Short Side
         elif self.time >= 15 and self.time < 17:
-            msg = self.create_twist(0.0, 1.6)
+            msg = self.create_twist(0.0, 1.6 # Rotate 90 degrees
         elif self.time >= 17 and self.time < 22:
-            msg = self.create_twist(2.0, 0.0)
+            msg = self.create_twist(2.0, 0.0) # long Side
         elif self.time >= 22 and self.time < 24:
-            msg = self.create_twist(0.0, 1.6)
+            msg = self.create_twist(0.0, 1.6) # Rotate 90 degrees
         elif self.time >= 24 and self.time < 29:
-            msg = self.create_twist(1.0, 0.0)
+            msg = self.create_twist(1.0, 0.0) # Short Side
         else:
-            msg = self.create_twist(0.0, 0.0)
+            msg = self.create_twist(0.0, 0.0) # Stop
         return msg
     
     def timer_callback(self):
