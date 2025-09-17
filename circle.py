@@ -16,6 +16,9 @@ class TurtleController(Node):
         msg.angular.z = angular_z
         return msg
 
+    ### The approach I had for this publisher was to change the angular velocity and the linear velocity for the entire time until it made a circle. 
+    ### This way, both velocities are changing and this will make the turtle rotate in a circle.
+
     def get_twist_msg(self):
         if self.time < 13:
             msg = self.create_twist(1.0, 1.0)
